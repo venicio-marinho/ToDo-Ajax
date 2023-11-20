@@ -1,0 +1,116 @@
+:root {
+  --radius: 3px;
+  --main: #660066;
+  --main-hover: #420042; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif; }
+
+body {
+  background-color: #660066; }
+
+main#main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh; }
+  main#main .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 450px;
+    height: 50%;
+    padding: 30px;
+    border-radius: var(--radius);
+    background-color: #fff;
+    overflow-y: auto; }
+    main#main .container::-webkit-scrollbar {
+      width: 3px; }
+    main#main .container::-webkit-scrollbar-thumb {
+      background-color: brown; }
+    main#main .container .new-task {
+      width: 100%; }
+      main#main .container .new-task form {
+        display: flex; }
+        main#main .container .new-task form input[type="text"] {
+          width: 100%;
+          border-radius: var(--radius) 0px 0px var(--radius);
+          padding: 0px 10px;
+          border: 1px solid #ccc;
+          outline: none; }
+        main#main .container .new-task form button {
+          border: none;
+          outline: none;
+          background-color: var(--main);
+          color: #fff;
+          padding: 10px 12px;
+          width: 40px;
+          font-size: 12pt;
+          cursor: pointer;
+          border-radius: 0px var(--radius) var(--radius) 0px;
+          transition: 0.3s; }
+          main#main .container .new-task form button:hover {
+            background-color: var(--main-hover); }
+    main#main .container .list-task {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%; }
+      main#main .container .list-task[data-btn="disabled"] .item p {
+        cursor: no-drop; }
+      main#main .container .list-task[data-btn="disabled"] .item button {
+        opacity: .7;
+        cursor: no-drop; }
+      main#main .container .list-task .item {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        align-items: center;
+        overflow: hidden;
+        height: 50px;
+        transition: 0.3s; }
+        main#main .container .list-task .item.no-task {
+          justify-content: center;
+          height: 100%; }
+        main#main .container .list-task .item.task-ok p {
+          text-decoration: line-through;
+          color: #ccc; }
+          main#main .container .list-task .item.task-ok p i {
+            color: limegreen; }
+        main#main .container .list-task .item:hover {
+          background-color: #eeeeee;
+          padding: 0px 15px; }
+        main#main .container .list-task .item:not(:first-child) {
+          padding-top: 2px; }
+        main#main .container .list-task .item:not(:first-child)::after {
+          content: '';
+          display: block;
+          position: absolute;
+          background-color: var(--main);
+          height: 1px;
+          top: 0;
+          left: 0px;
+          right: 0px;
+          border-radius: 50px; }
+        main#main .container .list-task .item p {
+          cursor: pointer; }
+        main#main .container .list-task .item button {
+          border: none;
+          outline: none;
+          color: #000;
+          cursor: pointer;
+          font-size: 12pt;
+          border-radius: 0px 5px 5px 0px;
+          background: transparent; }
+  main#main .credity {
+    margin-top: 30px; }
+    main#main .credity p {
+      color: #fff; }
+
+/*# sourceMappingURL=main.css.map */

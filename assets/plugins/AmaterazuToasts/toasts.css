@@ -1,0 +1,68 @@
+:root {
+    --border-radius: 5px; /* tamanho da circunferência da borda */
+}
+
+.toastsMod {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    width: 360px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    margin-bottom: -20%;
+    opacity: 0;
+}
+.toastsMod.tast_view {
+    margin-bottom: 0;
+    opacity: 1;
+}
+
+/* TIPO 1 */
+.toastsMod .toasts_title,
+.toastsMod .toasts_body,
+.toastsMod .toasts_footer {
+    padding: 15px 15px;
+    font-size: 14px;
+}
+.toastsMod .toasts_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+.toastsMod .toasts_title button.toasts_closed {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: 25px;
+    height: 25px;
+}
+.toastsMod .toasts_title button.toasts_closed svg {
+    color: #dadada;
+    width: inherit;
+    height: initial;
+    cursor: pointer;
+}
+.toastsMod .toasts_title button.toasts_closed svg:hover {
+    color: #fff;
+}
+
+.toastsMod .toasts_progress {
+    position: absolute;
+    left: 4px;
+    bottom: 4px;
+    width: calc(100% - 8px);
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: left;
+    background-color: red;
+    border-radius: inherit;
+}
+
+@keyframes progress {
+    to {
+        transform: scaleX(1);
+    }
+}
+
+/* TIPO 2 */

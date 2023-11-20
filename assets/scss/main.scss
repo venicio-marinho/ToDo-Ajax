@@ -1,0 +1,165 @@
+:root {
+    --radius: 3px;
+    --main: #660066;
+    --main-hover: #420042;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #660066;
+}
+
+main#main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100vh;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+
+        width: 450px;
+        height: 50%;
+        padding: 30px;
+        border-radius: var(--radius);
+        background-color: #fff;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            width: 3px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: brown;
+        }
+
+        .new-task {
+            width: 100%;
+
+            form {
+                display: flex;
+
+                input[type="text"] {
+                    width: 100%;
+                    border-radius: var(--radius) 0px 0px var(--radius);
+                    padding: 0px 10px;
+                    border: 1px solid #ccc;
+                    outline: none;
+                }
+
+                button {
+                    border: none;
+                    outline: none;
+                    background-color: var(--main);
+                    color: #fff;
+                    padding: 10px 12px;
+                    width: 40px;
+                    font-size: 12pt;
+                    cursor: pointer;
+                    border-radius: 0px var(--radius) var(--radius) 0px;
+                    transition: 0.3s;
+
+                    &:hover {
+                        background-color: var(--main-hover);
+                    }
+                }
+            }
+        }
+
+        .list-task {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+
+            &[data-btn="disabled"] {
+                .item {
+                    p {
+                        cursor: no-drop;
+                    }
+
+                    button {
+                        opacity: .7;
+                        cursor: no-drop;
+                    }
+                }
+            }
+
+            .item {
+                display: flex;
+                justify-content: space-between;
+                position: relative;
+                align-items: center;
+                overflow: hidden;
+                height: 50px;
+                transition: 0.3s;
+
+                &.no-task {
+                    justify-content: center;
+                    height: 100%;
+                }
+                &.task-ok {
+                    p {
+                        text-decoration: line-through;
+                        color: #ccc;
+
+                        i {
+                            color: limegreen;
+                        }
+                    }
+                }
+                &:hover {
+                    background-color: rgb(238, 238, 238);
+                    padding: 0px 15px;
+                }
+                &:not(:first-child) {
+                    padding-top: 2px;
+                }
+                &:not(:first-child)::after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    background-color: var(--main);
+                    height: 1px;
+                    top: 0;
+                    left: 0px;
+                    right: 0px;
+                    border-radius: 50px;
+                }
+
+                p {
+                    cursor: pointer;
+                }
+
+                button {
+                    border: none;
+                    outline: none;
+                    color: #000;
+                    cursor: pointer;
+                    font-size: 12pt;
+                    border-radius: 0px 5px 5px 0px;
+                    background: transparent;
+                }
+            }
+        }
+    }
+
+    .credity {
+        margin-top: 30px;
+        
+        p {
+            color: #fff;
+        }
+    }
+}
