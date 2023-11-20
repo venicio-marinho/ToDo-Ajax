@@ -1,6 +1,6 @@
 # ToDo Ajax
 
-feita em javascript com objetivo de criar tarefas, excluir e gerencia-las.
+feita em javascript com objetivo de criar, excluir e gerenciar tarefas.
 
 > ## como usar:
 > - Digite o nome da tarefa no campo e clique no botão para cria-la.
